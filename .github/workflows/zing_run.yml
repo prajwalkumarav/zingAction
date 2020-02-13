@@ -9,9 +9,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      with:
+        repository: 'google/gson'
+        ref: 'gson-parent-2.6.2'
+    - uses: prajwalkumarav/setup-java@master
+      with:
+         java-version: '8.42.0.23' # The JDK version to make available on the path. Takes a whole or semver JDK version, or 1.x syntax (e.g. 1.8 => Jdk 8.x). To specify a specific version for JDK 8 or older use the following pattern (8.0.x)
+         java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
+         architecture: x64 # (x64 or x86) - defaults to x64
+    - run: java -version
+    - run: echo "Hello1234"
