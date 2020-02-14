@@ -17,4 +17,4 @@ jobs:
          architecture: x64 # (x64 or x86) - defaults to x64
          
     - run: java -version
-    - run: echo "Hello"
+    - run: echo "Hell1o"
